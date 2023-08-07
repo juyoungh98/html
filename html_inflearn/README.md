@@ -106,6 +106,13 @@ ex. `<!--  -->`
 일반적으로 Enter키는 줄바꿈을 의미하나 HTML 코드에서는 이를 무시하며 공백도 한번만 인정됨 </br>
 HTML에서는 `</br>` 태그가 줄바꿈을, `&nbsp;`가 공백을 표현
 
+### 8. 태그의 구분
+
+태그 구분 : 개발자 도구 활용
+
+- 블록 레벨 요소 : 자기가 속한 영역의 너비를 모두 차지하여 블록 형성
+- 인라인 레벨 요소 : 자기에게 필요한 만큼의 공간만 차지
+
 <hr>
 <hr>
 
@@ -130,6 +137,8 @@ HTML에서는 `</br>` 태그가 줄바꿈을, `&nbsp;`가 공백을 표현
 |`<blockquote></blockquote>`|Defines a section that is quoted from another source|
 |`<body></body>`|Defines the document's body|
 |`<br>`|Defines a single line break|
+|`<em></em>`|Defines emphasized text (<em>text</em>; italics)|
+|`<mark></mark>`|Defines highlighted text (<mark>text</mark>)59|
 |`<meta>`|Defines metadata about an HTML document|
 |`<head></head>`|Contains metadata/information for the document|
 |`<html></html>`|Defines the root of an HTML document|
