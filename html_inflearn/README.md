@@ -113,6 +113,13 @@ HTML에서는 `</br>` 태그가 줄바꿈을, `&nbsp;`가 공백을 표현
 - 블록 레벨 요소 : 자기가 속한 영역의 너비를 모두 차지하여 블록 형성
 - 인라인 레벨 요소 : 자기에게 필요한 만큼의 공간만 차지
 
+### 9. 이미지 태그
+
+img 태그는 이미지를 표시할 때 사용하는 단일 태그 </br>
+기본 형태 : `<img src="이미지파일.jpg" alt="이미지설명">` </br>
+src는 이미지의 url을, alt는 이미지 로딩 전 또는 로딩에 실패할 경우 이미지 대신에 표시하는 텍스트 </br>
+width, height 속성을 사용하여 정수 픽셀 단위로 크기를 조절할 수 있음 </br>
+
 <hr>
 <hr>
 
@@ -137,9 +144,12 @@ HTML에서는 `</br>` 태그가 줄바꿈을, `&nbsp;`가 공백을 표현
 |`<blockquote></blockquote>`|Defines a section that is quoted from another source|
 |`<body></body>`|Defines the document's body|
 |`<br>`|Defines a single line break|
+|`<div></div>`|Defines a block level section in a document|
 |`<em></em>`|Defines emphasized text (<em>text</em>; italics)|
 |`<mark></mark>`|Defines highlighted text (<mark>text</mark>)59|
 |`<meta>`|Defines metadata about an HTML document|
 |`<head></head>`|Contains metadata/information for the document|
 |`<html></html>`|Defines the root of an HTML document|
+|`<img>`|Defines an image|
+|`<span></span>`|Defines an inline-block level section in a document
 |`<title></title>`|Defines a title for the document
