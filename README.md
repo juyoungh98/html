@@ -77,7 +77,10 @@ ex. `<!--  -->`
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+
+    <script src="main.js"></script>
   </head>
   <body>
 
@@ -90,6 +93,18 @@ ex. `<!--  -->`
 `<html></html>` : 문서 유형 지정 후 실제 문서가 시작되고 끝나는 지점을 나타내는 태그 </br>
 `<head></head>` : 웹 브라우저 화면에는 보이지 않지만 웹 브라우저가 알아야 할 정보를 나타내는 범위; 제목, 설명, 스타일 등등 </br>
 `<body></body>` : 웹 브라우저 화면에 표시될 내용이 입력되는, 구조를 나타내는 범위; 텍스트, 이미지, 사용자 인터페이스 태그 등을 포함하여 다양하게 구성할 수 있음 </br>
+`<link/>` : CSS나 favicon 등 외부 문서를 가져와 연결할 때 사용하는 태그; rel(필수 속성; 가져올 문서와 관계), href(가져올 문서의 경로) 속성 사용 </br>
+`<title></title>` : HTML 문서의 제목을 정의 </br>
+`<script></script>` : src 속성을 사용하면 외부 자바스크립트 파일을 가져올 수 있으며, src 속성 없이 script 태그 내부에 자바스크립트 작성할 수 있음 </br>
+
+**상대 경로와 절대 경로 :** link 태그 href 속성과 script 태그 src 속성에 외부 문서의 경로를 지정할 때 상대 경로, 절대 경로 지정
+
+- 상대 경로 :
+  - ./
+  - ../
+- 절대 경로 :
+  - http (https)
+  - / (루트)
 
 ### 6. HTML 텍스트 태그
 
@@ -103,12 +118,10 @@ ex. `<!--  -->`
 일반적으로 Enter키는 줄바꿈을 의미하나 HTML 코드에서는 이를 무시하며 공백도 한번만 인정됨 </br>
 HTML에서는 `</br>` 태그가 줄바꿈을, `&nbsp;`가 공백을 표현
 
-### 8. 태그의 구분
+### 8. 태그의 구분 (개발자 도구 활용)
 
-태그 구분 : 개발자 도구 활용
-
-- 블록 레벨 요소 : 자기가 속한 영역의 너비를 모두 차지하여 블록 형성
-- 인라인 레벨 요소 : 자기에게 필요한 만큼의 공간만 차지
+- 블록 레벨 요소 : 자기가 속한 영역의 너비를 모두 차지하여 블록 형성; 요소가 수직으로 쌓임
+- 인라인 레벨 요소 : 자기에게 필요한 만큼의 공간만 차지; 요소가 수평으로 쌓이며 높이와 너비를 수정할 수 없고 margin, padding의 좌우만 설정할 수 있음
 
 ### 9. img
 
@@ -130,13 +143,13 @@ width, height 속성을 사용하여 정수 픽셀 단위로 크기를 조절할
 전역 속성은 모든 HTML 태그에서 공통적으로 사용할 수 있는 속성 </br>
 속성이란 태그의 부가적 기능을 정의하는 것으로, 선택사항임 </br>
 속성은 시작 태그의 내부에 정의하며 속성의 개수에는 제한이 없음 </br>
+특정 태그에만 지정 가능한 속성들도 존재 </br>
 
-- id : 태그명이 같은 요소들을 식별하기 위해 사용; 태그당 하나
-- class : 태그명이 같은 요소들을 식별하기 위해 사용; 다중 지정 및 중복 가능
-- style
-- title
-
-특정 태그에만 지정 가능한 속성들도 존재
+- id : 요소를 식별하는 <u>고유</u>한 이름
+- class : 요소를 식별하는 <u>중복 가능</u>한 이름
+- style : 요소에 적용할 스타일을 지정
+- title : 요소의 정보나 설명을 지정
+- data : 요소에 데이터를 지정 및 저장 (html_fastcampus 참고)
 
 ### 12. a
 
@@ -200,16 +213,15 @@ ex. 로그인 양식은 일반적으로 세 개의 입력 요소로 구성되며
 
 meta 태그는 HTML 문서에 대한 메타데이터를 정의 </br>
 메타데이터란 데이터에 대한 데이터, 즉 '정보'를 의미 </br>
-meta 태그는 항상 head 태그 안에 들어가며 </br>
-일반적으로 문자 세트, 페이지 설명, 키워드, 문서의 작성자 및 뷰포트 설정을 지정하는 데 사용됨 </br>
-meta 태그는 웹페이지에 대한 정보를 제공하므로 검색엔진과 상호작용
+meta 태그는 항상 head 태그 안에 들어가며 일반적으로 문자 세트, 페이지 설명, 키워드, 문서의 작성자 및 뷰포트 설정을 지정하는 데 사용됨 </br>
+meta 태그는 웹페이지에 대한 정보를 검색엔진이나 브라우저에게 제공
 
 **meta 태그 속성 :**
 
 - charset : 문자 세트
 - http-equiv : 컨텐츠 속성 정보에 대한 http 헤더
-- name : 문서 정보
-- content : 메타데이터 내용
+- name : 문서 정보 (정보의 종류)
+- content : 메타데이터 내용 (정보의 값)
 
 **자주 사용되는 meta 태그 유형**
 
@@ -229,12 +241,24 @@ UTF? Unicode Transformation Format; 가변 길이 유니코드 인코딩; 유니
 기기 별로 뷰포트가 다르기 때문에 동일한 웹페이지라도 기기에 따라 다르게 보임 </br>
 기기 별 차이로 인한 배율 문제에 대응하기 위해 meta 태그를 통해 뷰포트 관련 설정 추가할 수 있음 </br>
 
+### 21. 부모 자식 관계
+
+```
+<parent>
+  <child>content</child>
+</parent>
+```
+
+자식 요소는 들여쓰기를 통해 부모 요소와 구분 </br>
+자식 요소를 포함하여 내부의 모든 태그를 하위 요소라 하며 </br>
+부모 요소를 포함하여 현재 태그를 감싸는 모든 태그를 상위 요소라 함
+
 <hr>
 <hr>
 
 ### HTML Tag Reference
 
-**Reference** : https://www.w3schools.com/tags/default.asp
+**Reference** : https://www.w3schools.com/tags/ref_byfunc.asp
 |Tag |Description|
 |-----------|-----------|
 |`<!--  -->`|Defines a comment|
@@ -245,8 +269,8 @@ UTF? Unicode Transformation Format; 가변 길이 유니코드 인코딩; 유니
 |`<link>`|Defines the relationship between a document and an external resource (most used to link to style sheets)|
 |`<title></title>`|Defines a title for the document|
 |`<script></script>`|Defines a client-side script|
+|`<style></style>`|Defines style information for a document; written in HTML file|
 |`<body></body>`|Defines the document's body|
-|`<article></article>`|Defines an article|
 |`<p></p>`|Defines a paragraph|
 |`<h1></h1> to <h6></h6>`|Defines HTML headings(headlines)|
 |`<hr>`|Defines a thematic change in the content; horizontal rule|
@@ -262,7 +286,21 @@ UTF? Unicode Transformation Format; 가변 길이 유니코드 인코딩; 유니
 |`<ol></ol>`|Defines an ordered list|
 |`<li></li>`|Defines a list item|
 |`<input>`|Defines an input control|
+|`<label></label>`|Defines a label for an `<input>` element; could either contain input tag inside or use 'for' attribute|
 |`<select></select>`|Defines a drop-down list|
 |`<option></option>`|Defines an option in a drop-down list|
 |`<textarea></textarea>`|Defines a multiline input control|
 |`<form></form>`|Defines an HTML form for user input|
+|`<table></table>`|Defines a table|
+|`<tr></tr>`|Defines a row in a table|
+|`<td></td>`|Defines a cell in a table|
+|`<section></section>`|Defines a section in a document|
+|`<header></header>`|Defines a header for a document or section|
+|`<main></main>`|Specifies the main content of a document|
+|`<article></article>`|Defines an article|
+|`<aside></aside>`|Defines an content aside from the page content|
+|`<details></details>`|Defines additional details that the user can view or hide|
+|`<summary></summary>`|Defines a visible heading for a `<details>` element|
+|`<dialog></dialog>`|Defines a dialog box or window|
+|`<data></data>`|Adds a machine-readable translation of a given content|
+|`<footer></footer>`|Defines a footer for a document or section|
